@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= content_for(:title) || "Yuuhi" %></title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <script src="https://kit.fontawesome.com/2a61574caf.js" crossorigin="anonymous"></script>
+
+    <%= yield :head %>
+
+    <link rel="manifest" href="/manifest.json">
+    <link rel="icon" href="/icon.png" type="image/png">
+    <link rel="icon" href="/icon.svg" type="image/svg+xml">
+    <link rel="apple-touch-icon" href="/icon.png">
+    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+    <%= javascript_importmap_tags %>
+  </head>
+
+<header>
+     <div class="hamburger-menu">
+        <input type="checkbox" id="menu-btn-check">
+        <label for="menu-btn-check" class="menu-btn"><span></span></label>
+        <div class="menu-content">
+            <ul>
+            <li>
+              <%= link_to "ルール", rule_path %> 
+            </li>
+
+            <li>
+               <%= link_to "役", yaku_path %>
+            </li>
+
+             <li>
+               <%= link_to "投稿一覧", mypage_path %>
+             </li>
+
+            <li>
+               <%= link_to "投稿", new_tweet_path %>
+            </li>
+
+            <li>
+             <%= link_to "トップページ", tweets_path %>
+            </li>
+          </ul>
+          </div>
+        </div>
+    </div>
+      <h1>はじめてのまあじゃん</h1>
+      <div class="header-list">
+      
+      </div>
+    </header>
+
+  <body>
+   
+    <%= yield %>
+
+   
+
+  </body>
+
+ 
+</html>
+
+
