@@ -1,26 +1,42 @@
-<h2>Log in</h2>
+<%= stylesheet_link_tag "devise", "data-turbo-track": "reload" %>
 
-<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-  <div class="field">
-    <p><%= f.label :email %></p>
-    <p><%= f.email_field :email, autofocus: true, autocomplete: "email" %></p>
+<div class="auth-container">
+
+  <h1 class="auth-title">🀄 ログイン</h1>
+
+  <p class="auth-description">
+    さあ、麻雀を楽しもう！
+  </p>
+
+  <div class="auth-card">
+
+    <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+
+      <div class="auth-field">
+        <%= f.label :email, "メールアドレス" %>
+        <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "メールアドレスを入力" %>
+      </div>
+
+      <div class="auth-field">
+        <%= f.label :password, "パスワード" %>
+        <%= f.password_field :password, autocomplete: "current-password", placeholder: "パスワードを入力" %>
+      </div>
+
+      <% if devise_mapping.rememberable? %>
+        <div class="remember-field">
+          <%= f.check_box :remember_me %>
+          <%= f.label :remember_me, "ログイン状態を保存する" %>
+        </div>
+      <% end %>
+
+      <%= f.submit "ログインする", class: "auth-submit" %>
+
+    <% end %>
+
   </div>
 
-  <div class="field">
-    <p><%= f.label :password %></p>
-    <p><%= f.password_field :password, autocomplete: "current-password" %></p>
+  <div class="auth-link">
+    <%= render "devise/shared/links" %>
   </div>
 
-  <% if devise_mapping.rememberable? %>
-    <div class="field">
-      <p><%= f.check_box :remember_me %></p>
-      <p><%= f.label :remember_me %></p>
-    </div>
-  <% end %>
-
-  <div class="actions">
-    <%= f.submit "Log in" %>
-  </div>
-<% end %>
-
-<%= render "users/shared/links" %>
+</div>

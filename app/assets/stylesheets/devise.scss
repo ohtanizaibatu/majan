@@ -1,0 +1,208 @@
+/* =========================
+   ログイン・新規登録
+========================= */
+
+.auth-container {
+  width: 92%;
+  max-width: 520px;
+  margin: 40px auto 60px;
+}
+
+/* タイトル */
+
+.auth-title {
+  text-align: center;
+  margin: 0 0 8px;
+
+  color: #286344;
+  font-size: 30px;
+  font-weight: bold;
+}
+
+/* 説明 */
+
+.auth-description {
+  text-align: center;
+  margin-bottom: 28px;
+
+  color: #777;
+  font-size: 15px;
+}
+
+
+/* =========================
+   カード
+========================= */
+
+.auth-card {
+  padding: 35px 40px;
+
+  background: #fffdf7;
+
+  border: 3px solid #397a59;
+  border-radius: 20px;
+
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+}
+
+
+/* =========================
+   入力欄
+========================= */
+
+.auth-field {
+  margin-bottom: 22px;
+}
+
+.auth-field label {
+  display: block;
+
+  margin-bottom: 8px;
+
+  color: #3f4f46;
+
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.auth-field input[type="email"],
+.auth-field input[type="password"] {
+  width: 100%;
+  box-sizing: border-box;
+
+  padding: 12px 14px;
+
+  background: white;
+
+  border: 2px solid #cbd9d0;
+  border-radius: 10px;
+
+  font-family: inherit;
+  font-size: 16px;
+}
+
+.auth-field input[type="email"]:focus,
+.auth-field input[type="password"]:focus {
+  outline: none;
+
+  border-color: #397a59;
+
+  box-shadow: 0 0 0 3px rgba(57, 122, 89, 0.15);
+}
+
+
+/* =========================
+   ログイン状態を保存
+========================= */
+
+.remember-field {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+
+  margin: 5px 0 20px;
+
+  color: #666;
+  font-size: 14px;
+}
+
+.remember-field input {
+  accent-color: #397a59;
+}
+
+
+/* =========================
+   ボタン
+========================= */
+
+.auth-submit {
+  display: block;
+
+  width: 100%;
+
+  padding: 14px;
+
+  border: none;
+  border-radius: 12px;
+
+  background: #397a59;
+  color: white;
+
+  font-family: inherit;
+  font-size: 18px;
+  font-weight: bold;
+
+  cursor: pointer;
+
+  transition: 0.2s;
+}
+
+.auth-submit:hover {
+  background: #286344;
+  transform: translateY(-2px);
+}
+
+
+/* =========================
+   Deviseリンク
+========================= */
+
+.auth-link {
+  text-align: center;
+
+  margin-top: 20px;
+
+  line-height: 2;
+}
+
+.auth-link a {
+  color: #397a59;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.auth-link a:hover {
+  text-decoration: underline;
+}
+
+
+/* =========================
+   エラーメッセージ
+========================= */
+
+.auth-card .alert {
+  margin-bottom: 20px;
+  padding: 12px 15px;
+
+  background: #fff0ed;
+  border: 1px solid #e2a294;
+  border-radius: 10px;
+
+  color: #b94b35;
+  font-size: 14px;
+}
+
+
+/* =========================
+   スマホ
+========================= */
+
+@media (max-width: 600px) {
+
+  .auth-container {
+    width: 94%;
+    margin-top: 25px;
+  }
+
+  .auth-title {
+    font-size: 25px;
+  }
+
+  .auth-card {
+    padding: 25px 20px;
+  }
+
+  .auth-submit {
+    font-size: 17px;
+  }
+}

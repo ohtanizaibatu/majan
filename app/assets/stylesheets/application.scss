@@ -366,7 +366,7 @@ header h1 span:nth-child(10) {
   position: relative;
   min-height: calc(100vh - 90px);
 
-  background-image: url("/assets/麻雀背景.jpg") !important;
+ background-image: asset-url("mahjong-bg.jpg") !important;
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
