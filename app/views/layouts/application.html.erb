@@ -4,6 +4,9 @@
     <title><%= content_for(:title) || "Yuuhi" %></title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="apple-mobile-web-app-capable" content="yes">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@400;700;800&display=swap" rel="stylesheet">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
@@ -42,7 +45,7 @@
             </li>
 
             <li>
-             <%= link_to "トップページ", tweets_path %>
+             <%= link_to "トップページ", root_path %>
             </li>
           </ul>
           </div>
@@ -60,7 +63,9 @@
       </ul>
     </div>
 
-    <h1>はじめてのまあじゃん</h1>
+    <h1>
+  <span>は</span><span>じ</span><span>め</span><span>て</span><span>の</span><span>ま</span><span>あ</span><span>じ</span><span>ゃ</span><span>ん</span>
+</h1>
     
     </header>
 

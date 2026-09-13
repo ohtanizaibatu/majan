@@ -1,23 +1,259 @@
-.tweets-container {
-  width: 50%;
-  margin: 10px auto;
+/* =========================
+   投稿一覧
+========================= */
+
+.index-container {
+  width: 92%;
+  max-width: 1000px;
+  margin: 35px auto 60px;
 }
-h3 {
-  width: 100px;
-  margin: 30px auto;
+
+/* タイトル */
+
+.index-title {
   text-align: center;
+  color: #286344;
+  font-size: 30px;
+  margin-bottom: 20px;
 }
+
+/* 新規投稿 */
+
+.new-post-link {
+  display: block;
+  width: fit-content;
+  margin: 0 auto 12px;
+  padding: 11px 25px;
+  background: #397a59;
+  color: white;
+  text-decoration: none;
+  border-radius: 12px;
+  font-weight: bold;
+}
+
+.new-post-link:hover {
+  background: #286344;
+}
+
+/* マイページ */
+
+.mypage-link {
+  display: block;
+  width: fit-content;
+  margin: 0 auto 30px;
+  color: #397a59;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+/* =========================
+   投稿カード
+========================= */
+
 .tweet {
-  border-top: solid #00acee;
-  margin-top: 10px;
-  padding-top: 20px;
+  display: grid;
+  grid-template-columns: 220px 1fr 110px;
+  gap: 25px;
+
+  margin-bottom: 25px;
+  padding: 22px;
+
+  background: #fffdf7;
+  border: 2px solid #dce4dd;
+  border-radius: 18px;
+
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
 }
-.main-box {
-  margin: 5px 0;
-  display: flex;
-  justify-content: space-between;
+
+/* 画像 */
+
+.tweet-image img {
+  width: 220px;
+  height: 175px;
+  object-fit: cover;
+  border-radius: 12px;
 }
-.time {
+
+.no-image {
+  width: 220px;
+  height: 175px;
   display: flex;
-  justify-content: flex-end;
+  align-items: center;
+  justify-content: center;
+
+  background: #f0eee5;
+  color: #999;
+  border-radius: 12px;
+}
+
+/* =========================
+   投稿内容
+========================= */
+
+.tweet-content {
+  min-width: 0;
+}
+
+/* 投稿者 */
+
+.tweet-user {
+  font-size: 14px;
+  margin-bottom: 5px;
+  color: #777;
+}
+
+.tweet-user a {
+  color: #397a59;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+/* 名前 */
+
+.tweet-name {
+  margin: 0 0 5px;
+  font-size: 23px;
+  color: #333;
+}
+
+/* 年齢 */
+
+.tweet-age {
+  margin: 0 0 12px;
+  color: #777;
+  font-size: 14px;
+}
+
+/* 内容 */
+
+.tweet-about {
+  padding: 12px 15px;
+  background: #f5faf7;
+  border-radius: 10px;
+  line-height: 1.7;
+  color: #444;
+}
+
+/* =========================
+   いいね
+========================= */
+
+.tweet-like {
+  margin-top: 12px;
+}
+
+.tweet-like a {
+  color: #c75a3a;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.tweet-like i {
+  margin-right: 4px;
+}
+
+/* =========================
+   コメント
+========================= */
+
+.comments-area {
+  margin-top: 18px;
+}
+
+.comments-title {
+  margin: 0 0 8px;
+  color: #397a59;
+  font-weight: bold;
+}
+
+.comment {
+  padding: 8px 12px;
+  margin-bottom: 7px;
+  background: #faf9f3;
+  border-left: 3px solid #9bbba7;
+  border-radius: 5px;
+  font-size: 13px;
+}
+
+.comment strong {
+  color: #397a59;
+}
+
+.comment p {
+  margin: 3px 0 0;
+  color: #555;
+}
+
+/* =========================
+   右側ボタン
+========================= */
+
+.right-container {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.right-container a {
+  padding: 9px 7px;
+  text-align: center;
+
+  background: #f0eee5;
+  color: #555;
+
+  border-radius: 9px;
+  text-decoration: none;
+  font-size: 13px;
+  font-weight: bold;
+}
+
+/* 詳細を見る */
+
+.right-container .detail-link {
+  background: #397a59;
+  color: white;
+}
+
+.right-container a:hover {
+  opacity: 0.8;
+}
+
+/* =========================
+   スマホ
+========================= */
+
+@media (max-width: 700px) {
+
+  .index-container {
+    width: 94%;
+  }
+
+  .index-title {
+    font-size: 25px;
+  }
+
+  .tweet {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    padding: 17px;
+  }
+
+  .tweet-image img,
+  .no-image {
+    width: 100%;
+    height: 200px;
+  }
+
+  .tweet-name {
+    font-size: 21px;
+  }
+
+  .right-container {
+    flex-direction: row;
+  }
+
+  .right-container a {
+    flex: 1;
+  }
 }

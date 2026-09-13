@@ -1,0 +1,602 @@
+/* =========================
+   役ページ
+========================= */
+
+.yaku-container {
+  max-width: 900px;
+  margin: 40px auto 70px;
+  padding: 0 25px;
+  color: #333;
+  line-height: 2;
+}
+
+/* =========================
+   ページタイトル
+========================= */
+
+.yaku-container > h1 {
+  background: #397a59;
+  color: white;
+  text-align: center;
+  font-size: 32px;
+  padding: 20px;
+  margin-bottom: 30px;
+  border-radius: 18px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.12);
+}
+
+/* =========================
+   最初の説明
+========================= */
+
+.yaku-intro {
+  background: white;
+  padding: 25px 30px;
+  margin-bottom: 40px;
+  border-left: 6px solid #397a59;
+  border-radius: 12px;
+  box-shadow: 0 3px 12px rgba(0, 0, 0, 0.08);
+}
+
+.yaku-intro p {
+  margin: 0 0 10px;
+}
+
+.yaku-intro p:last-child {
+  margin-bottom: 0;
+}
+
+.yaku-intro strong {
+  color: #c75a3a;
+}
+
+
+/* =========================
+   リーチ重要メッセージ
+========================= */
+
+.yaku-riichi-message {
+  background: #fffdf5;
+  border: 3px solid #e4ad45;
+  border-radius: 16px;
+  padding: 25px 30px;
+  margin-bottom: 45px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.yaku-riichi-message h2 {
+  background: #397a59;
+  color: white;
+  text-align: center;
+  font-size: 23px;
+  padding: 13px;
+  border-radius: 10px;
+  margin-bottom: 20px;
+}
+
+.yaku-riichi-message p {
+  font-size: 16px;
+  line-height: 2;
+}
+
+.yaku-riichi-message strong {
+  color: #c75a3a;
+}
+
+.yaku-riichi-flow {
+  background: #f5faf7;
+  border-radius: 12px;
+  padding: 20px;
+  margin: 20px 0;
+  text-align: center;
+  font-weight: bold;
+  color: #286344;
+}
+
+.yaku-riichi-flow span {
+  display: block;
+  padding: 8px;
+}
+
+.yaku-riichi-flow b {
+  display: block;
+  color: #397a59;
+  font-size: 20px;
+}
+
+.yaku-riichi-flow .riichi-highlight {
+  background: #c75a3a;
+  color: white;
+  border-radius: 10px;
+  font-size: 23px;
+  margin: 5px 0;
+}
+
+
+/* =========================
+   翻数カテゴリー
+========================= */
+
+.yaku-category {
+  margin-bottom: 45px;
+}
+
+.yaku-category-title {
+  background: #397a59;
+  color: white;
+  padding: 18px 25px;
+  border-radius: 14px;
+  font-size: 27px;
+  font-weight: bold;
+  margin-bottom: 20px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+}
+
+.yaku-category-title small {
+  display: block;
+  font-size: 14px;
+  font-weight: normal;
+}
+
+/* 二翻 */
+
+.yaku-category-title.two {
+  background: #527da0;
+}
+
+/* 三翻 */
+
+.yaku-category-title.three {
+  background: #b17a3d;
+}
+
+/* 六翻 */
+
+.yaku-category-title.six {
+  background: #a94d4d;
+}
+
+
+/* =========================
+   役カード
+========================= */
+
+.yaku-card {
+  background: white;
+  padding: 28px 32px;
+  margin-bottom: 20px;
+  border-radius: 16px;
+  border: 1px solid #e5e5e5;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
+}
+
+.yaku-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 15px;
+}
+
+.yaku-card-header h2 {
+  color: #397a59;
+  font-size: 23px;
+  line-height: 1.5;
+  margin: 0;
+}
+
+.yaku-card p {
+  font-size: 16px;
+  line-height: 2;
+  margin-bottom: 15px;
+}
+
+.yaku-card p strong {
+  color: #c75a3a;
+}
+
+
+/* =========================
+   翻数
+========================= */
+
+.han {
+  background: #e4ad45;
+  color: white;
+  padding: 5px 15px;
+  border-radius: 20px;
+  font-size: 14px;
+  font-weight: bold;
+  white-space: nowrap;
+}
+
+
+/* =========================
+   役の例
+========================= */
+
+.yaku-example {
+  background: #fff8e8;
+  border-left: 5px solid #e4ad45;
+  border-radius: 10px;
+  padding: 17px 22px;
+  margin: 20px 0;
+}
+
+.yaku-example strong {
+  color: #8b671c;
+}
+
+.yaku-example p {
+  margin: 5px 0 0;
+}
+
+
+/* =========================
+   ポイント
+========================= */
+
+.yaku-point {
+  background: #edf7f1;
+  border: 2px solid #c8e1d2;
+  color: #286344;
+  padding: 13px 18px;
+  border-radius: 10px;
+  font-weight: bold;
+  margin-top: 18px;
+}
+
+
+/* =========================
+   牌
+========================= */
+
+.tile-example {
+  display: flex;
+  justify-content: center;
+  gap: 7px;
+  flex-wrap: wrap;
+  margin: 20px 0;
+}
+
+.tile-example span {
+  width: 45px;
+  height: 58px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: #fffdf7;
+  border: 2px solid #d8d1bd;
+  border-radius: 7px;
+
+  box-shadow: 2px 3px 5px rgba(0, 0, 0, 0.12);
+
+  font-size: 22px;
+  font-weight: bold;
+}
+
+
+/* 字牌 */
+
+.honor-example {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  margin: 20px 0;
+}
+
+.honor-example div {
+  width: 65px;
+  height: 80px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: #fffdf7;
+  border: 2px solid #d8d1bd;
+  border-radius: 8px;
+
+  box-shadow: 2px 3px 5px rgba(0, 0, 0, 0.12);
+
+  color: #c75a3a;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+
+/* 七対子 */
+
+.pair-example {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin: 20px 0;
+}
+
+.pair-example span {
+  background: #f5f0df;
+  padding: 10px 14px;
+  border-radius: 8px;
+  font-weight: bold;
+}
+
+
+/* 一気通貫 */
+
+.sequence-example {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  flex-wrap: wrap;
+  margin: 20px 0;
+}
+
+.sequence-example span {
+  width: 45px;
+  height: 58px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: #fffdf7;
+  border: 2px solid #d8d1bd;
+  border-radius: 7px;
+
+  font-size: 22px;
+  font-weight: bold;
+}
+
+.sequence-example b {
+  color: #397a59;
+  margin: 0 5px;
+}
+
+
+/* =========================
+   初心者まとめ
+========================= */
+
+.yaku-beginner {
+  background: #f7fcf9;
+  border: 3px solid #9bc9ad;
+  padding: 30px 35px;
+  border-radius: 18px;
+  margin-top: 50px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+}
+
+.yaku-beginner h2 {
+  background: #397a59;
+  color: white;
+  text-align: center;
+  padding: 14px;
+  border-radius: 10px;
+  font-size: 24px;
+  margin-bottom: 25px;
+}
+
+
+/* 初心者3役 */
+
+.beginner-list {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 15px;
+}
+
+.beginner-list div {
+  background: white;
+  padding: 18px;
+  border-radius: 12px;
+  text-align: center;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.beginner-list span {
+  font-size: 28px;
+}
+
+.beginner-list strong {
+  color: #397a59;
+  font-size: 18px;
+}
+
+.beginner-list small {
+  color: #888;
+}
+
+
+/* メッセージ */
+
+.yaku-message {
+  background: #fff8e8;
+  border-radius: 12px;
+  padding: 18px 20px;
+  margin-top: 25px;
+  text-align: center;
+}
+
+.yaku-message p {
+  margin: 5px 0;
+}
+
+.yaku-message strong {
+  color: #c75a3a;
+}
+
+
+/* ルールへのリンク */
+
+.rule-link {
+  display: block;
+  width: fit-content;
+  margin: 25px auto 0;
+  padding: 13px 25px;
+
+  background: #397a59;
+  color: white;
+
+  text-decoration: none;
+  border-radius: 10px;
+
+  font-weight: bold;
+}
+
+.rule-link:hover {
+  opacity: 0.8;
+}
+
+
+/* =========================
+   スマホ
+========================= */
+
+@media (max-width: 600px) {
+
+  .yaku-container {
+    margin-top: 20px;
+    padding: 0 12px;
+  }
+
+  .yaku-container > h1 {
+    font-size: 24px;
+    padding: 16px;
+  }
+
+  .yaku-intro {
+    padding: 20px;
+  }
+
+  .yaku-riichi-message {
+    padding: 18px 15px;
+  }
+
+  .yaku-riichi-message h2 {
+    font-size: 19px;
+  }
+
+  .yaku-category-title {
+    font-size: 22px;
+    padding: 15px 18px;
+  }
+
+  .yaku-card {
+    padding: 20px 18px;
+  }
+
+  .yaku-card-header {
+    align-items: flex-start;
+  }
+
+  .yaku-card-header h2 {
+    font-size: 19px;
+  }
+
+  .han {
+    font-size: 12px;
+    padding: 5px 10px;
+  }
+
+  .yaku-card p {
+    font-size: 15px;
+    line-height: 1.9;
+  }
+
+  .beginner-list {
+    grid-template-columns: 1fr;
+  }
+
+  .honor-example div {
+    width: 55px;
+    height: 70px;
+  }
+
+  .yaku-beginner {
+    padding: 20px 15px;
+  }
+}
+/* =========================
+   リーチ重要メッセージ
+========================= */
+
+.yaku-riichi-message {
+  background: #fffdf5;
+  border: 3px solid #e4ad45;
+  border-radius: 18px;
+  padding: 28px 30px;
+  margin: 30px 0;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+  text-align: center;
+}
+
+.yaku-riichi-message h2 {
+  color: #397a59;
+  font-size: 25px;
+  margin-bottom: 20px;
+}
+
+.yaku-riichi-message p {
+  line-height: 2;
+}
+
+.yaku-riichi-flow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin: 25px 0;
+}
+
+.yaku-riichi-flow span {
+  background: #f5faf7;
+  color: #286344;
+  padding: 12px 18px;
+  border-radius: 10px;
+  font-weight: bold;
+}
+
+.yaku-riichi-flow b {
+  color: #397a59;
+  font-size: 20px;
+}
+
+.yaku-riichi-flow .riichi-highlight {
+  background: #c75a3a;
+  color: white;
+  font-size: 20px;
+  padding: 14px 25px;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.15);
+}
+
+@media (max-width: 600px) {
+
+  .yaku-riichi-message {
+    padding: 20px 15px;
+  }
+
+  .yaku-riichi-message h2 {
+    font-size: 20px;
+  }
+
+  .yaku-riichi-flow {
+    flex-direction: column;
+    gap: 6px;
+  }
+
+  .yaku-riichi-flow b {
+    transform: rotate(0deg);
+  }
+
+}

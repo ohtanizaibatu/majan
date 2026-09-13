@@ -1,155 +1,870 @@
 /*
- * This is a manifest file that'll be compiled into application.css, which will include all the files
- * listed below.
- *
- * Any CSS (and SCSS, if configured) file within this directory, lib/assets/stylesheets, or any plugin's
- * vendor/assets/stylesheets directory can be referenced here using a relative path.
- *
- * You're free to add application-wide styles to this file and they'll appear at the bottom of the
- * compiled file so the styles you add here take precedence over styles defined in any other CSS
- * files in this directory. Styles in this file should be added after the last require_* statement.
- * It is generally better to create a new file per style scope.
- *
+ * This is a manifest file that'll be compiled into application.css
  *= require_tree .
  *= require_self
  */
+
 * {
   padding: 0;
   margin: 0;
 }
+
 body {
-  font-family: "Hiragino Kaku Gothic Pro", "ヒラギノ角ゴ Pro W3", "メイリオ",
-    Meiryo, "ＭＳ Ｐゴシック", sans-serif;
-  background-image: url("まあじゃん.jpg");
-  background-size: cover;
-  display: block;;
+  font-family: "Hiragino Kaku Gothic Pro", "ヒラギノ角ゴ Pro W3",
+    "メイリオ", Meiryo, "ＭＳ Ｐゴシック", sans-serif;
+
+  background-color: #e3f0e8;
 }
+
+/* =========================
+   ヘッダー
+========================= */
+
 header {
-  background-color: #ee0000;
-  height: 80px;
-  font-weight: bold;
+  height: 90px;
+  background-color: #315f43;
+
   display: flex;
-  justify-content: space-between;
   align-items: center;
+
+  position: relative;
+  z-index: 100;
 }
-header a {
-  color: white; 
-  text-decoration: none; 
-}
-header h1 {
-  color: white;
-  margin-left: 20px;
-}
+
+/* 左側：新規登録・ログイン */
+
 .header-list {
+  position: absolute;
+  left: 25px;
+
   display: flex;
   align-items: center;
 }
+
 header ul {
   display: flex;
+  align-items: center;
+  margin: 0;
 }
+
 header li {
   list-style: none;
-  margin-right: 40px;
+  margin-right: 35px;
 }
 
-footer {
+header a {
   color: white;
-  height: 30px;
-  background-color: #000;
-  bottom: 0;
-  width: 100%;
-  display: flex;
-  align-items: center;
-  position: fixed;
-  justify-content: flex-end;
+  text-decoration: none;
+  font-size: 17px;
+  font-weight: bold;
+
+  transition: 0.2s;
 }
+
+header a:hover {
+  opacity: 0.7;
+}
+
+/* =========================
+   サイトタイトル
+========================= */
+
+header h1 {
+  color: white;
+
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+
+  margin: 0;
+
+  font-family: "M PLUS Rounded 1c", sans-serif;
+  font-size: 34px;
+  font-weight: 800;
+
+  letter-spacing: 3px;
+  white-space: nowrap;
+
+  text-shadow: 2px 3px 0 rgba(0, 0, 0, 0.15);
+  
+}
+
+/* タイトル横の麻雀牌 */
+
+header h1::after {
+  content: "中";
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 38px;
+  height: 46px;
+
+  margin-left: 14px;
+
+  background: #fff;
+  color: #d94b4b;
+
+  border: 3px solid #d9d1bd;
+  border-radius: 7px;
+
+  font-family: serif;
+  font-size: 27px;
+  font-weight: bold;
+
+  box-shadow: 3px 4px 0 rgba(0, 0, 0, 0.15);
+
+  vertical-align: middle;
+}
+
+/* =========================
+   ハンバーガーボタン
+========================= */
 
 .menu-btn {
-    position: fixed;
-    top: 10px;
-    right: 10px;
-    display: flex;
-    height: 60px;
-    width: 60px;
-    justify-content: center;
-    align-items: center;
-    z-index: 90;
-    background-color: #bb3535;
+  position: absolute;
+
+  top: 50%;
+  right: 18px;
+
+  transform: translateY(-50%);
+
+  display: flex;
+
+  height: 55px;
+  width: 55px;
+
+  justify-content: center;
+  align-items: center;
+
+  z-index: 110;
+
+  background-color: rgba(255, 255, 255, 0.08);
+
+  border-radius: 8px;
+
+  cursor: pointer;
+
+  transition: 0.2s;
 }
+
+.menu-btn:hover {
+  background-color: rgba(255, 255, 255, 0.18);
+}
+
 .menu-btn span,
 .menu-btn span:before,
 .menu-btn span:after {
-    content: '';
-    display: block;
-    height: 3px;
-    width: 25px;
-    border-radius: 3px;
-    background-color: #ffffff;
-    position: absolute;
-}
-.menu-btn span:before {
-    bottom: 8px;
-}
-.menu-btn span:after {
-    top: 8px;
+  content: "";
+
+  display: block;
+
+  height: 3px;
+  width: 25px;
+
+  border-radius: 3px;
+
+  background-color: #ffffff;
+
+  position: absolute;
+
+  transition: 0.3s;
 }
 
+.menu-btn span:before {
+  bottom: 8px;
+}
+
+.menu-btn span:after {
+  top: 8px;
+}
+
+/* =========================
+   メニューを開いたとき
+========================= */
+
 #menu-btn-check:checked ~ .menu-btn span {
-    background-color: rgba(255, 255, 255, 0);/*メニューオープン時は真ん中の線を透明にする*/
+  background-color: transparent;
 }
+
 #menu-btn-check:checked ~ .menu-btn span::before {
-    bottom: 0;
-    transform: rotate(45deg);
+  bottom: 0;
+  transform: rotate(45deg);
 }
+
 #menu-btn-check:checked ~ .menu-btn span::after {
-    top: 0;
-    transform: rotate(-45deg);
+  top: 0;
+  transform: rotate(-45deg);
 }
 
 #menu-btn-check {
-    display: none;
+  display: none;
 }
+
+/* =========================
+   メニュー画面
+========================= */
 
 .menu-content {
   width: 100%;
-    height: 100%;
-    position: fixed;
-    top: 0;
-    left: 100%;/*leftの値を変更してメニューを画面外へ*/
-    z-index: 80;
-    background-color: #3584bb;
-    transition: all 0.5s;/*アニメーション設定*/
-}
-.menu-content ul {
-    padding: 70px 10px 0;
-}
-.menu-content ul li {
-    border-bottom: solid 1px #ffffff;
-    list-style: none;
-}
-.menu-content ul li a {
-    display: block;
-    width: 100%;
-    font-size: 15px;
-    box-sizing: border-box;
-    color:#ffffff;
-    text-decoration: none;
-    padding: 9px 15px 10px 0;
-    position: relative;
-}
-.menu-content ul li a::before {
-    content: "";
-    width: 7px;
-    height: 7px;
-    border-top: solid 2px #ffffff;
-    border-right: solid 2px #ffffff;
-    transform: rotate(45deg);
-    position: absolute;
-    right: 11px;
-    top: 16px;
+  height: 100%;
 
+  position: fixed;
+
+  top: 0;
+  left: 100%;
+
+  z-index: 80;
+
+  background-color: #397a59;
+
+  transition: all 0.4s;
+}
+
+.menu-content ul {
+  padding: 100px 25px 0;
+  display: block;
+}
+
+.menu-content ul li {
+  border-bottom: solid 1px rgba(255, 255, 255, 0.4);
+
+  list-style: none;
+}
+
+.menu-content ul li a {
+  display: block;
+
+  width: 100%;
+
+  font-size: 18px;
+
+  box-sizing: border-box;
+
+  color: #ffffff;
+
+  text-decoration: none;
+
+  padding: 18px 15px;
+
+  position: relative;
+}
+
+.menu-content ul li a::before {
+  content: "";
+
+  width: 8px;
+  height: 8px;
+
+  border-top: solid 2px #ffffff;
+  border-right: solid 2px #ffffff;
+
+  transform: rotate(45deg);
+
+  position: absolute;
+
+  right: 15px;
+  top: 23px;
 }
 
 #menu-btn-check:checked ~ .menu-content {
-    left: 0;/*メニューを画面内へ*/
+  left: 0;
+}
+
+/* =========================
+   フッター
+========================= */
+
+footer {
+  color: white;
+
+  height: 30px;
+
+  background-color: #000;
+
+  bottom: 0;
+
+  width: 100%;
+
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+
+  position: fixed;
+}
+
+header h1 span {
+  display: inline-block;
+  animation: titleBounce 1.8s ease-in-out infinite;
+}
+
+/* 1文字ずつタイミングをずらす */
+header h1 span:nth-child(1) {
+  animation-delay: 0s;
+}
+
+header h1 span:nth-child(2) {
+  animation-delay: 0.08s;
+}
+
+header h1 span:nth-child(3) {
+  animation-delay: 0.16s;
+}
+
+header h1 span:nth-child(4) {
+  animation-delay: 0.24s;
+}
+
+header h1 span:nth-child(5) {
+  animation-delay: 0.32s;
+}
+
+header h1 span:nth-child(6) {
+  animation-delay: 0.40s;
+}
+
+header h1 span:nth-child(7) {
+  animation-delay: 0.48s;
+}
+
+header h1 span:nth-child(8) {
+  animation-delay: 0.56s;
+}
+
+header h1 span:nth-child(9) {
+  animation-delay: 0.64s;
+}
+
+header h1 span:nth-child(10) {
+  animation-delay: 0.72s;
+}
+
+@keyframes titleBounce {
+  0%, 70%, 100% {
+    transform: translateY(0) rotate(0deg);
+  }
+
+  15% {
+    transform: translateY(-7px) rotate(-3deg);
+  }
+
+  30% {
+    transform: translateY(0) rotate(2deg);
+  }
+
+  45% {
+    transform: translateY(-3px) rotate(-1deg);
+  }
+}
+
+/* =========================
+   麻雀トップページ
+========================= */
+
+.mahjong-home {
+  position: relative;
+  min-height: calc(100vh - 90px);
+
+  background-image: url("/assets/麻雀背景.jpg") !important;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  overflow: hidden;
+}
+
+/* =========================
+   キャラクターエリア
+========================= */
+
+.character-area {
+  position: absolute;
+
+  left: 0;
+  bottom: 0;
+
+  width: 100%;
+  height: 100%;
+
+  pointer-events: none;
+
+  overflow: hidden;
+}
+
+
+/* キャラクター共通 */
+
+.character {
+  position: absolute;
+
+  display: block;
+
+  z-index: 10;
+
+  object-fit: contain;
+}
+
+
+/* =========================
+   猫
+========================= */
+
+.cat {
+  width: 260px;
+
+  left: 5%;
+  bottom: 3%;
+
+  animation:
+    cat-jump 2.2s ease-in-out infinite;
+}
+
+
+/* 猫がぴょん */
+
+@keyframes cat-jump {
+
+  0%,
+  100% {
+    transform: translateY(0) rotate(0deg);
+  }
+
+  35% {
+    transform: translateY(-18px) rotate(-3deg);
+  }
+
+  55% {
+    transform: translateY(-5px) rotate(3deg);
+  }
+
+}
+
+
+/* =========================
+   ペンギン
+========================= */
+
+.penguin {
+  width: 220px;
+
+  left: 40%;
+  bottom: 5%;
+
+  animation:
+    penguin-sway 3s ease-in-out infinite;
+}
+
+
+/* ペンギンがゆらゆら */
+
+@keyframes penguin-sway {
+
+  0%,
+  100% {
+    transform: rotate(-4deg);
+  }
+
+  50% {
+    transform: rotate(4deg);
+  }
+
+}
+
+
+/* =========================
+   柴犬
+========================= */
+
+.dog {
+  width: 260px;
+
+  right: 5%;
+  bottom: 3%;
+
+  animation:
+    dog-float 3.5s ease-in-out infinite;
+}
+
+
+/* 柴犬がふわふわ */
+
+@keyframes dog-float {
+
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-8px);
+  }
+
+}
+
+
+/* =========================
+   中央の文字
+========================= */
+
+.home-content {
+
+  position: absolute;
+
+  left: 50%;
+  top: 8%;
+
+  transform: translateX(-50%);
+
+  text-align: center;
+
+  z-index: 20;
+
+  background: rgba(255, 250, 235, 0.9);
+  border-radius: 25px;
+  border: 2px solid #e6d7b8;
+
+  padding: 20px 35px;
+
+  box-shadow:
+    0 8px 25px rgba(0, 0, 0, 0.12);
+}
+
+.home-content h2 {
+
+  color: #397a59;
+
+  font-family:
+    "M PLUS Rounded 1c",
+    sans-serif;
+
+  font-size: 28px;
+
+  margin-bottom: 8px;
+}
+
+.home-content p {
+
+  color: #555;
+
+  font-size: 16px;
+}
+
+
+/* =========================
+   スマホ
+========================= */
+
+@media (max-width: 600px) {
+
+  .cat {
+    width: 140px;
+
+    left: 0;
+    bottom: 3%;
+  }
+
+  .penguin {
+    width: 120px;
+
+    left: 37%;
+    bottom: 5%;
+  }
+
+  .dog {
+    width: 145px;
+
+    right: 0;
+    bottom: 3%;
+  }
+
+  .home-content {
+
+    top: 8%;
+
+    width: 75%;
+
+    padding: 15px 20px;
+  }
+
+  .home-content h2 {
+    font-size: 20px;
+  }
+
+  .home-content p {
+    font-size: 13px;
+  }
+
+}
+/* =========================
+   キャラクターアニメーション強化
+========================= */
+
+.mahjong-home .character {
+  position: absolute !important;
+  display: block !important;
+  z-index: 50 !important;
+  object-fit: contain;
+
+  will-change: transform;
+}
+
+
+/* 猫：ぴょんぴょん */
+
+.mahjong-home .cat {
+  width: 240px !important;
+  left: 4% !important;
+  bottom: 0% !important;
+
+  animation: catJumpStrong 1.8s ease-in-out infinite !important;
+}
+
+@keyframes catJumpStrong {
+
+  0% {
+    transform: translateY(0) rotate(0deg);
+  }
+
+  25% {
+    transform: translateY(-35px) rotate(-6deg);
+  }
+
+  50% {
+    transform: translateY(0) rotate(5deg);
+  }
+
+  65% {
+    transform: translateY(-12px) rotate(-2deg);
+  }
+
+  100% {
+    transform: translateY(0) rotate(0deg);
+  }
+
+}
+
+
+/* ペンギン：左右にゆらゆら */
+
+.mahjong-home .penguin {
+  width: 200px !important;
+  left: 40% !important;
+  bottom: 0% !important;
+
+  animation: penguinDance 2s ease-in-out infinite !important;
+}
+
+@keyframes penguinDance {
+
+  0% {
+    transform: translateX(0) rotate(-8deg);
+  }
+
+  25% {
+    transform: translateX(-15px) rotate(-3deg);
+  }
+
+  50% {
+    transform: translateX(0) rotate(8deg);
+  }
+
+  75% {
+    transform: translateX(15px) rotate(3deg);
+  }
+
+  100% {
+    transform: translateX(0) rotate(-8deg);
+  }
+
+}
+
+
+/* 柴犬：ふわふわ */
+
+.mahjong-home .dog {
+  width: 240px !important;
+  right: 4% !important;
+  bottom: 0% !important;
+
+  animation: dogSleep 2.5s ease-in-out infinite !important;
+}
+
+@keyframes dogSleep {
+
+  0% {
+    transform: translateY(0) rotate(0deg);
+  }
+
+  50% {
+    transform: translateY(-20px) rotate(2deg);
+  }
+
+  100% {
+    transform: translateY(0) rotate(0deg);
+  }
+
+}
+
+.dog-area {
+  position: absolute;
+  right: 30px;
+  bottom: 30px;
+  z-index: 10;
+}
+
+.dog-image {
+  width: 200px;
+  display: block;
+}
+
+.speech-bubble {
+  position: absolute;
+  right: 100px;
+  bottom: 130px;
+
+  width: 330px;
+  padding: 22px 28px;
+
+  background: rgba(255, 250, 235, 0.95);
+  border: 3px solid #3f3a32;
+  border-radius: 30px;
+
+  text-align: left;
+  line-height: 1.7;
+
+  box-shadow: 3px 4px 0 rgba(63, 58, 50, 0.25);
+
+  z-index: 20;
+}
+
+.speech-bubble p {
+  margin: 8px 0 18px;
+}
+
+.menu-mark {
+  display: inline-block;
+
+  font-size: 22px;
+  font-weight: bold;
+
+  border: 2px solid #315f43;
+  border-radius: 7px;
+
+  padding: 1px 7px;
+
+  color: #315f43;
+  background: #fff;
+}
+
+.menu-text {
+  font-weight: bold;
+  color: #315f43;
+}
+.dog-image {
+  animation: dogMove 2s ease-in-out infinite;
+}
+
+@keyframes dogMove {
+  0% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-10px);
+  }
+
+  100% {
+    transform: translateY(0);
+  }
+}
+.menu-mark {
+  display: inline-block;
+  font-size: 24px;
+  font-weight: bold;
+  border: 2px solid #333;
+  border-radius: 6px;
+  padding: 0px 6px;
+  line-height: 1.1;
+  margin: 0 3px;
+}
+/* =========================
+   TOPページ メニューボタン
+========================= */
+
+
+
+/* =========================
+   TOPページ 紹介カード
+========================= */
+
+.menu-cards {
+  position: absolute;
+  left: 50%;
+  bottom: 18px;
+  transform: translateX(-50%);
+
+  width: 88%;
+  max-width: 1100px;
+
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+
+  z-index: 45;
+}
+
+.menu-card {
+  min-height: 70px;
+  padding: 10px 12px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+
+  box-sizing: border-box;
+
+  border-radius: 16px;
+  border: 2px solid rgba(255,255,255,0.7);
+
+  color: white;
+  text-align: center;
+
+  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+
+  cursor: default;
+}
+
+.menu-card strong {
+  display: block;
+  font-size: 17px;
+}
+
+.menu-card small {
+  display: block;
+  margin-top: 3px;
+  font-size: 11px;
+  font-weight: normal;
+}
+
+.card-icon {
+  font-size: 25px;
+}
+
+/* 色 */
+.menu-card.rule {
+  background: rgba(72, 130, 88, 0.92);
+}
+
+.menu-card.yaku {
+  background: rgba(55, 145, 195, 0.92);
+}
+
+.menu-card.question {
+  background: rgba(210, 105, 115, 0.92);
+}
+
+.menu-card.posts {
+  background: rgba(115, 100, 160, 0.92);
 }

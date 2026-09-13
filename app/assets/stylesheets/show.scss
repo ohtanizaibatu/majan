@@ -1,0 +1,377 @@
+/* =========================
+   詳細ページ
+========================= */
+
+.show-container {
+  width: 92%;
+  max-width: 850px;
+  margin: 35px auto 60px;
+}
+
+/* タイトル */
+
+.show-title {
+  text-align: center;
+  color: #286344;
+  font-size: 30px;
+  margin-bottom: 30px;
+}
+
+
+/* =========================
+   投稿カード
+========================= */
+
+.show-card {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+
+  padding: 30px;
+
+  background: #fffdf7;
+  border: 2px solid #dce4dd;
+  border-radius: 20px;
+
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+}
+
+
+/* 画像 */
+
+.show-image {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.show-image img {
+  width: 100%;
+  max-height: 350px;
+  object-fit: cover;
+
+  border-radius: 15px;
+}
+
+.no-image {
+  width: 100%;
+  height: 300px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: #f0eee5;
+  border-radius: 15px;
+
+  color: #999;
+}
+
+
+/* =========================
+   投稿情報
+========================= */
+
+.show-info h2 {
+  margin: 0 0 10px;
+
+  color: #286344;
+  font-size: 27px;
+}
+
+.show-age {
+  display: inline-block;
+
+  margin-bottom: 20px;
+  padding: 6px 15px;
+
+  background: #f0f5f1;
+  border-radius: 20px;
+
+  color: #555;
+  font-size: 14px;
+}
+
+
+/* 投稿内容 */
+
+.show-about {
+  margin-bottom: 20px;
+  padding: 15px;
+
+  background: #f5faf7;
+  border-radius: 12px;
+
+  line-height: 1.7;
+}
+
+.show-about p {
+  margin: 0;
+}
+
+.show-about .info-title {
+  margin-bottom: 8px;
+
+  color: #397a59;
+  font-weight: bold;
+}
+
+
+/* =========================
+   いいね
+========================= */
+
+.show-like {
+  margin: 15px 0;
+}
+
+.show-like a {
+  color: #c75a3a;
+  text-decoration: none;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.show-like i {
+  margin-right: 5px;
+}
+
+
+/* 編集ボタン */
+
+.edit-button {
+  display: block;
+
+  margin-top: 20px;
+  padding: 11px;
+
+  text-align: center;
+
+  background: #397a59;
+  color: white;
+
+  border-radius: 10px;
+  text-decoration: none;
+
+  font-weight: bold;
+}
+
+.edit-button:hover {
+  background: #286344;
+}
+
+
+/* =========================
+   いいねした人
+========================= */
+
+.liked-users {
+  margin-top: 25px;
+  padding: 25px;
+
+  background: #fffdf7;
+  border: 2px solid #dce4dd;
+  border-radius: 18px;
+
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+}
+
+.liked-users h2,
+.comment-wrapper h2 {
+  margin: 0 0 15px;
+
+  padding: 10px 15px;
+
+  background: #397a59;
+  color: white;
+
+  border-radius: 10px;
+
+  font-size: 19px;
+}
+
+.liked-users ul {
+  margin: 0;
+  padding: 0;
+
+  list-style: none;
+}
+
+.liked-users li {
+  padding: 9px 12px;
+  margin-bottom: 7px;
+
+  background: #faf9f3;
+  border-left: 3px solid #9bbba7;
+
+  border-radius: 6px;
+
+  color: #555;
+}
+
+.no-liked-user,
+.no-comment {
+  color: #999;
+  text-align: center;
+}
+
+
+/* =========================
+   コメント
+========================= */
+
+.comment-wrapper {
+  margin-top: 25px;
+  padding: 25px;
+
+  background: #fffdf7;
+  border: 2px solid #dce4dd;
+  border-radius: 18px;
+
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+}
+
+
+/* コメント */
+
+.comment {
+  margin-bottom: 10px;
+  padding: 12px 15px;
+
+  background: #faf9f3;
+
+  border-left: 3px solid #9bbba7;
+  border-radius: 7px;
+}
+
+.comment-user {
+  margin-bottom: 4px;
+
+  color: #397a59;
+  font-size: 13px;
+  font-weight: bold;
+}
+
+.comment-content {
+  color: #555;
+  line-height: 1.6;
+}
+
+
+/* =========================
+   コメント入力
+========================= */
+
+.comment-form {
+  margin-top: 20px;
+}
+
+.comment-form textarea {
+  width: 100%;
+  min-height: 90px;
+  box-sizing: border-box;
+
+  padding: 12px;
+
+  border: 2px solid #cbd9d0;
+  border-radius: 10px;
+
+  font-family: inherit;
+  font-size: 15px;
+
+  resize: vertical;
+}
+
+.comment-form textarea:focus {
+  outline: none;
+
+  border-color: #397a59;
+
+  box-shadow: 0 0 0 3px rgba(57, 122, 89, 0.12);
+}
+
+.comment-form button {
+  width: 100%;
+
+  margin-top: 10px;
+  padding: 12px;
+
+  border: none;
+  border-radius: 10px;
+
+  background: #397a59;
+  color: white;
+
+  font-family: inherit;
+  font-size: 16px;
+  font-weight: bold;
+
+  cursor: pointer;
+}
+
+.comment-form button:hover {
+  background: #286344;
+}
+
+
+/* =========================
+   戻るボタン
+========================= */
+
+.back-button {
+  display: block;
+
+  width: fit-content;
+
+  margin: 25px auto 0;
+  padding: 10px 20px;
+
+  background: #f0eee5;
+  color: #555;
+
+  border-radius: 10px;
+
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.back-button:hover {
+  background: #e4e1d5;
+}
+
+
+/* =========================
+   スマホ
+========================= */
+
+@media (max-width: 700px) {
+
+  .show-container {
+    width: 94%;
+    margin-top: 25px;
+  }
+
+  .show-title {
+    font-size: 25px;
+  }
+
+  .show-card {
+    display: flex;
+    flex-direction: column;
+
+    padding: 20px;
+  }
+
+  .show-image img {
+    max-height: 280px;
+  }
+
+  .show-info h2 {
+    font-size: 23px;
+  }
+
+  .liked-users,
+  .comment-wrapper {
+    padding: 18px;
+  }
+}

@@ -1,50 +1,151 @@
-<h1>麻雀</h1> 
-<h3>Tweet詳細</h3>
-<div class="tweet">
-  <p><%= @tweet.name %></p>
-  <p><%= @tweet.age %></p>
-  <p><%= @tweet.image %></p>
-  <p><%= @tweet.about %></p>
-   <% if user_signed_in? %>
-      <% if current_user.already_liked?(@tweet) %>
-        <%= link_to tweet_like_path(@tweet), method: :delete do %>
-          <i class="fas fa-heart"></i><%= @tweet.likes.count %>
-        <% end %>
+<%= stylesheet_link_tag "show", "data-turbo-track": "reload" %>
+
+<div class="show-container">
+
+  <h1 class="show-title">🀄 投稿詳細</h1>
+
+  <!-- 投稿 -->
+  <div class="show-card">
+
+    <!-- 画像 -->
+    <div class="show-image">
+      <% if @tweet.image.attached? %>
+        <%= image_tag @tweet.image %>
       <% else %>
-        <%= link_to tweet_likes_path(@tweet), method: :post do %>
-          <i class="far fa-heart"></i><%= @tweet.likes.count %>
-        <% end %>
+        <div class="no-image">画像はありません</div>
       <% end %>
-    <% else %>
-      <i class="far fa-heart"></i><%= @tweet.likes.count %>
-    <% end %>
-  <%= link_to "編集する", edit_tweet_path(@tweet.id) %>
-</div>
-
-<h2>いいねしたユーザー</h2>
-<% @tweet.liked_users.each do |user| %>
-  <li><%= user.email %></li>
-<% end %>
-
-<div class="comment-wrapper">
-  <p>コメント一覧</p>
-  <% @comments.each do |c| %>
-    <div>
-      <%= c.user.email unless c.user.blank? %>
-      <br>
-      <%= c.content %>
     </div>
-      <br>
-  <% end %>
 
-  <% if user_signed_in? %>
-    <%= form_with(model: [@tweet, @comment], local: true) do |f| %>
-      <%= f.text_area :content %>
-      <%= button_tag type: "submit" do %>
-        <i class="far fa-comments"></i> コメントする
-      <% end %>
+    <!-- 投稿情報 -->
+    <div class="show-info">
+
+      <h2><%= @tweet.name %></h2>
+
+      <div class="show-age">
+        年齢：<%= @tweet.age %>歳
+      </div>
+
+      <div class="show-about">
+        <p class="info-title">📝 投稿内容</p>
+        <p><%= @tweet.about %></p>
+      </div>
+
+      <!-- いいね -->
+      <div class="show-like">
+        <% if user_signed_in? %>
+
+          <% if current_user.already_liked?(@tweet) %>
+            <%= link_to tweet_like_path(@tweet), method: :delete do %>
+              <i class="fas fa-heart"></i>
+              <%= @tweet.likes.count %>
+            <% end %>
+          <% else %>
+            <%= link_to tweet_likes_path(@tweet), method: :post do %>
+              <i class="far fa-heart"></i>
+              <%= @tweet.likes.count %>
+            <% end %>
+          <% end %>
+
+        <% else %>
+          <i class="far fa-heart"></i>
+          <%= @tweet.likes.count %>
+        <% end %>
+      </div>
+
+      <!-- 編集 -->
+      <%= link_to "✏️ 投稿を編集する",
+          edit_tweet_path(@tweet.id),
+          class: "edit-button" %>
+
+    </div>
+  </div>
+
+
+  <!-- いいねしたユーザー -->
+  <div class="liked-users">
+
+    <h2>❤️ いいねした人</h2>
+
+    <% if @tweet.liked_users.any? %>
+
+      <ul>
+        <% @tweet.liked_users.each do |user| %>
+          <li>
+            <%= user.email %>
+          </li>
+        <% end %>
+      </ul>
+
+    <% else %>
+
+      <p class="no-liked-user">
+        まだいいねした人はいません
+      </p>
+
     <% end %>
-  <% end %>
-</div>
 
-<%= link_to "Tweet一覧に戻る", tweets_path %>
+  </div>
+
+
+  <!-- コメント -->
+  <div class="comment-wrapper">
+
+    <h2>💬 コメント</h2>
+
+    <% if @comments.any? %>
+
+      <% @comments.each do |c| %>
+
+        <div class="comment">
+
+          <div class="comment-user">
+            <%= c.user.email unless c.user.blank? %>
+          </div>
+
+          <div class="comment-content">
+            <%= c.content %>
+          </div>
+
+        </div>
+
+      <% end %>
+
+    <% else %>
+
+      <p class="no-comment">
+        まだコメントはありません
+      </p>
+
+    <% end %>
+
+
+    <!-- コメント投稿 -->
+    <% if user_signed_in? %>
+
+      <div class="comment-form">
+
+        <%= form_with(model: [@tweet, @comment], local: true) do |f| %>
+
+          <%= f.text_area :content,
+              placeholder: "コメントを書いてみよう！" %>
+
+          <%= button_tag type: "submit" do %>
+            <i class="far fa-comments"></i>
+            コメントする
+          <% end %>
+
+        <% end %>
+
+      </div>
+
+    <% end %>
+
+  </div>
+
+
+  <!-- 戻る -->
+  <%= link_to "← みんなの投稿に戻る",
+      tweets_path,
+      class: "back-button" %>
+
+</div>

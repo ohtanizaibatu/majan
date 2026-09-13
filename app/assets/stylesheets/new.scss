@@ -1,23 +1,145 @@
+/* =========================
+   新規投稿ページ
+========================= */
+
 .post-container {
-  margin: 50px auto;
-  width: 50%;
-  border: solid #d3def1;
-  border-radius: 10px;
+  width: 90%;
+  max-width: 650px;
+  margin: 40px auto;
+  padding: 35px 40px;
+  background: #fffdf7;
+  border: 3px solid #397a59;
+  border-radius: 20px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.12);
+}
+
+/* タイトル */
+.post-container .title {
   text-align: center;
-  background-color: #d3def1;
-}
-.title {
-  font-size: 32px;
+  font-size: 28px;
   font-weight: bold;
-  margin-bottom: 50px;
+  color: #286344;
+  margin: 0 0 30px;
 }
-input[type="text"] {
-  width: 95%;
-  height: 40px;
+
+/* タイトル下の飾り */
+.post-container .title::after {
+  content: "🀄";
+  display: block;
+  font-size: 30px;
+  margin-top: 8px;
 }
-input[type="submit"] {
-  width: 200px;
-  font-size: 20px;
-  margin-top: 50px;
-  margin-bottom: 30px;
+
+/* 各入力項目 */
+.post-container .field {
+  margin-bottom: 24px;
+}
+
+/* ラベル */
+.post-container .field label {
+  display: block;
+  font-weight: bold;
+  font-size: 17px;
+  color: #3f4f46;
+  margin-bottom: 8px;
+}
+
+/* 入力欄 */
+.post-container input[type="text"],
+.post-container input[type="number"],
+.post-container textarea {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 12px 14px;
+  border: 2px solid #cbd9d0;
+  border-radius: 10px;
+  background: white;
+  font-size: 16px;
+  font-family: inherit;
+  transition: 0.2s;
+}
+
+/* 入力中 */
+.post-container input[type="text"]:focus,
+.post-container input[type="number"]:focus,
+.post-container textarea:focus {
+  outline: none;
+  border-color: #397a59;
+  box-shadow: 0 0 0 3px rgba(57, 122, 89, 0.15);
+}
+
+/* 画像アップロード */
+.post-container input[type="file"] {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 12px;
+  background: #f5faf7;
+  border: 2px dashed #9bbba7;
+  border-radius: 10px;
+  font-family: inherit;
+}
+
+/* 投稿ボタン */
+.post-container input[type="submit"] {
+  display: block;
+  width: 100%;
+  margin-top: 30px;
+  padding: 14px;
+  border: none;
+  border-radius: 12px;
+  background: #397a59;
+  color: white;
+  font-size: 18px;
+  font-weight: bold;
+  font-family: inherit;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.post-container input[type="submit"]:hover {
+  background: #286344;
+  transform: translateY(-2px);
+}
+
+/* 一覧に戻る */
+.post-container + a {
+  display: block;
+  width: fit-content;
+  margin: 0 auto 40px;
+  padding: 10px 20px;
+  border-radius: 10px;
+  background: #f0eee5;
+  color: #555;
+  text-decoration: none;
+  font-weight: bold;
+  transition: 0.2s;
+}
+
+.post-container + a:hover {
+  background: #e4e1d5;
+}
+
+/* =========================
+   スマホ
+========================= */
+
+@media (max-width: 600px) {
+
+  .post-container {
+    width: 88%;
+    padding: 25px 20px;
+    margin: 25px auto;
+  }
+
+  .post-container .title {
+    font-size: 24px;
+  }
+
+  .post-container .field label {
+    font-size: 16px;
+  }
+
+  .post-container input[type="submit"] {
+    font-size: 17px;
+  }
 }

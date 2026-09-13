@@ -1,0 +1,420 @@
+.rule-container {
+  text-align: center;
+}
+
+.rule-container h1,
+.rule-container h2,
+.rule-container h3,
+.rule-container p {
+  text-align: center;
+}
+
+/* =========================
+   ルールページ
+========================= */
+
+.rule-container {
+  max-width: 900px;
+  margin: 40px auto 70px;
+  padding: 0 25px;
+  color: #333;
+  line-height: 2;
+}
+
+/* ページタイトル */
+
+.rule-container > h1 {
+  background: #397a59;
+  color: white;
+  text-align: center;
+  font-size: 32px;
+  padding: 20px;
+  margin-bottom: 30px;
+  border-radius: 18px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.12);
+}
+
+/* 最初の説明 */
+
+.rule-intro {
+  background: #ffffff;
+  padding: 25px 30px;
+  margin-bottom: 30px;
+  border-left: 6px solid #397a59;
+  border-radius: 12px;
+  box-shadow: 0 3px 12px rgba(0, 0, 0, 0.08);
+}
+
+.rule-intro p {
+  margin-bottom: 12px;
+}
+
+.rule-intro p:last-child {
+  margin-bottom: 0;
+}
+
+/* 各セクション */
+
+.rule-section {
+  background: #ffffff;
+  padding: 30px 35px;
+  margin-bottom: 30px;
+  border-radius: 16px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+}
+
+/* セクション見出し */
+
+.rule-section h2 {
+  color: #397a59;
+  font-size: 24px;
+  line-height: 1.5;
+  padding: 12px 15px;
+  margin-bottom: 22px;
+  background: #edf7f1;
+  border-left: 6px solid #397a59;
+  border-radius: 8px;
+}
+
+/* 小見出し */
+
+.rule-section h3 {
+  color: #286344;
+  font-size: 20px;
+  margin-top: 28px;
+  margin-bottom: 12px;
+  padding-bottom: 6px;
+  border-bottom: 2px solid #d8eadf;
+}
+
+/* 本文 */
+
+.rule-section p {
+  font-size: 16px;
+  line-height: 2;
+  margin-bottom: 18px;
+}
+
+/* 強調文字 */
+
+.rule-section strong {
+  color: #c75a3a;
+}
+
+/* 箇条書き */
+
+.rule-section ul,
+.rule-section ol {
+  margin: 15px 0 20px 30px;
+  padding: 15px 20px;
+  background: #f5faf7;
+  border-radius: 10px;
+}
+
+.rule-section li {
+  margin-bottom: 8px;
+  line-height: 1.8;
+}
+
+.rule-section li:last-child {
+  margin-bottom: 0;
+}
+
+/* 流れ */
+
+.flow-box {
+  background: #f1f8f4;
+  border: 2px solid #c8e1d2;
+  border-radius: 14px;
+  padding: 20px;
+  margin: 25px 0;
+  text-align: center;
+  font-weight: bold;
+  color: #397a59;
+}
+
+.flow-box div {
+  margin: 7px 0;
+}
+
+/* 普通の例 */
+
+.example-box {
+  background: #fff8e8;
+  border-left: 5px solid #e4ad45;
+  border-radius: 10px;
+  padding: 18px 22px;
+  margin: 20px 0;
+}
+
+.example-box p {
+  margin-bottom: 6px;
+}
+
+/* 大きな例 */
+
+.big-example {
+  display: block;
+  text-align: center;
+  background: #f5f0df;
+  color: #397a59;
+  font-size: 28px;
+  font-weight: bold;
+  padding: 18px;
+  margin: 20px 0;
+  border-radius: 12px;
+}
+
+/* 重要ポイント */
+
+.big-point {
+  background: #eaf6ef;
+  color: #286344;
+  border: 2px solid #9bc9ad;
+  border-radius: 12px;
+  padding: 20px;
+  margin: 22px 0;
+  text-align: center;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+/* 注意 */
+
+.warning-box {
+  background: #fff0ed;
+  color: #b94b35;
+  border-left: 6px solid #d95d45;
+  border-radius: 10px;
+  padding: 18px 22px;
+  margin: 22px 0;
+  font-size: 18px;
+}
+
+/* 字牌 */
+
+.tile-list {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin: 20px 0;
+}
+
+.tile-list span {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 55px;
+  height: 70px;
+  background: white;
+  border: 2px solid #d8d1bd;
+  border-radius: 8px;
+  box-shadow: 2px 3px 5px rgba(0, 0, 0, 0.12);
+  font-size: 24px;
+  font-weight: bold;
+  color: #d94b4b;
+}
+
+/* 手牌例 */
+
+.hand-example {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 10px;
+  margin: 25px 0;
+}
+
+.hand-example div {
+  background: #f5f0df;
+  padding: 12px 5px;
+  text-align: center;
+  border-radius: 8px;
+  font-weight: bold;
+}
+
+/* 💡ポイント */
+
+.point {
+  background: #fff8df;
+  padding: 14px 18px;
+  border-radius: 10px;
+  color: #8b671c;
+  font-weight: bold;
+}
+
+/* 面白コメント */
+
+.example-text,
+.humor {
+  background: #f7f7f7;
+  padding: 18px 22px;
+  border-radius: 10px;
+  color: #555;
+}
+
+/* 役ページへのリンク */
+
+.yaku-link,
+.post-link {
+  display: block;
+  width: fit-content;
+  margin: 25px auto 5px;
+  padding: 13px 25px;
+  background: #397a59;
+  color: white;
+  text-decoration: none;
+  border-radius: 10px;
+  font-weight: bold;
+  transition: 0.2s;
+}
+
+.yaku-link:hover,
+.post-link:hover {
+  opacity: 0.8;
+  transform: translateY(-2px);
+}
+
+/* 初心者まとめ */
+
+.beginner {
+  border: 3px solid #9bc9ad;
+  background: #f7fcf9;
+}
+
+.beginner h2 {
+  background: #397a59;
+  color: white;
+  border-left: none;
+}
+
+.beginner-message {
+  background: #fff8e8;
+  border-radius: 12px;
+  padding: 20px 25px;
+  margin-top: 25px;
+  text-align: center;
+}
+
+/* スマホ */
+
+@media (max-width: 600px) {
+
+  .rule-container {
+    margin-top: 20px;
+    padding: 0 12px;
+  }
+
+  .rule-container > h1 {
+    font-size: 24px;
+    padding: 16px;
+  }
+
+  .rule-section {
+    padding: 20px 18px;
+    margin-bottom: 20px;
+  }
+
+  .rule-section h2 {
+    font-size: 20px;
+  }
+
+  .rule-section h3 {
+    font-size: 18px;
+  }
+
+  .rule-section p {
+    font-size: 15px;
+    line-height: 1.9;
+  }
+
+  .big-point {
+    font-size: 17px;
+  }
+
+  .big-example {
+    font-size: 23px;
+  }
+
+  .hand-example {
+    grid-template-columns: 1fr 1fr;
+  }
+
+}
+/* =========================
+   リーチ重要ポイント
+========================= */
+
+.riichi-important {
+  background: #fffdf5;
+  border: 3px solid #e4ad45;
+  border-radius: 16px;
+  padding: 25px 30px;
+  margin: 25px 0;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.riichi-title {
+  background: #397a59;
+  color: white;
+  text-align: center;
+  font-size: 22px;
+  font-weight: bold;
+  padding: 12px;
+  border-radius: 10px;
+  margin-bottom: 20px;
+}
+
+.riichi-flow {
+  background: #f5faf7;
+  border-radius: 12px;
+  padding: 20px;
+  text-align: center;
+  font-weight: bold;
+  color: #286344;
+}
+
+.riichi-flow div {
+  padding: 10px;
+}
+
+.riichi-flow span {
+  display: block;
+  font-size: 20px;
+  color: #397a59;
+}
+
+.riichi-flow .riichi-big {
+  background: #c75a3a;
+  color: white;
+  font-size: 25px;
+  border-radius: 10px;
+  margin: 8px 0;
+}
+
+.riichi-message {
+  background: #fff0ed;
+  color: #b94b35;
+  text-align: center;
+  padding: 15px;
+  border-radius: 10px;
+  margin-top: 20px;
+}
+
+@media (max-width: 600px) {
+  .riichi-important {
+    padding: 18px 15px;
+  }
+
+  .riichi-title {
+    font-size: 19px;
+  }
+
+  .riichi-flow {
+    padding: 15px 10px;
+  }
+
+  .riichi-flow .riichi-big {
+    font-size: 21px;
+  }
+}

@@ -1,0 +1,205 @@
+/* =========================
+   編集ページ
+========================= */
+
+.edit-container {
+  width: 92%;
+  max-width: 650px;
+  margin: 35px auto 60px;
+}
+
+/* タイトル */
+
+.edit-title {
+  text-align: center;
+  color: #286344;
+  font-size: 30px;
+  margin: 0 0 8px;
+}
+
+/* 説明 */
+
+.edit-description {
+  text-align: center;
+  color: #777;
+  margin-bottom: 25px;
+}
+
+
+/* =========================
+   編集カード
+========================= */
+
+.edit-card {
+  padding: 35px 40px;
+
+  background: #fffdf7;
+  border: 3px solid #397a59;
+  border-radius: 20px;
+
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+}
+
+
+/* =========================
+   入力項目
+========================= */
+
+.edit-field {
+  margin-bottom: 23px;
+}
+
+.edit-field label {
+  display: block;
+
+  margin-bottom: 8px;
+
+  color: #3f4f46;
+  font-size: 17px;
+  font-weight: bold;
+}
+
+
+/* テキスト・数字・本文 */
+
+.edit-field input[type="text"],
+.edit-field input[type="number"],
+.edit-field textarea {
+  width: 100%;
+  box-sizing: border-box;
+
+  padding: 12px 14px;
+
+  background: white;
+
+  border: 2px solid #cbd9d0;
+  border-radius: 10px;
+
+  font-family: inherit;
+  font-size: 16px;
+}
+
+.edit-field textarea {
+  min-height: 120px;
+  resize: vertical;
+}
+
+
+/* フォーカス */
+
+.edit-field input[type="text"]:focus,
+.edit-field input[type="number"]:focus,
+.edit-field textarea:focus {
+  outline: none;
+
+  border-color: #397a59;
+
+  box-shadow: 0 0 0 3px rgba(57, 122, 89, 0.15);
+}
+
+
+/* =========================
+   画像
+========================= */
+
+.edit-field input[type="file"] {
+  width: 100%;
+  box-sizing: border-box;
+
+  padding: 12px;
+
+  background: #f5faf7;
+
+  border: 2px dashed #9bbba7;
+  border-radius: 10px;
+
+  font-family: inherit;
+}
+
+
+/* =========================
+   保存ボタン
+========================= */
+
+.edit-submit {
+  display: block;
+
+  width: 100%;
+
+  margin-top: 30px;
+  padding: 14px;
+
+  border: none;
+  border-radius: 12px;
+
+  background: #397a59;
+  color: white;
+
+  font-family: inherit;
+  font-size: 18px;
+  font-weight: bold;
+
+  cursor: pointer;
+
+  transition: 0.2s;
+}
+
+.edit-submit:hover {
+  background: #286344;
+  transform: translateY(-2px);
+}
+
+
+/* =========================
+   戻る
+========================= */
+
+.edit-back {
+  display: block;
+
+  width: fit-content;
+
+  margin: 25px auto 0;
+  padding: 10px 20px;
+
+  background: #f0eee5;
+  color: #555;
+
+  border-radius: 10px;
+
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.edit-back:hover {
+  background: #e4e1d5;
+}
+
+
+/* =========================
+   スマホ
+========================= */
+
+@media (max-width: 600px) {
+
+  .edit-container {
+    width: 94%;
+    margin-top: 25px;
+  }
+
+  .edit-title {
+    font-size: 25px;
+  }
+
+  .edit-card {
+    padding: 25px 20px;
+  }
+
+  .edit-field label {
+    font-size: 16px;
+  }
+
+  .edit-submit {
+    font-size: 17px;
+  }
+}

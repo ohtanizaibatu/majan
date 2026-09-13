@@ -1,51 +1,107 @@
 <%= stylesheet_link_tag 'index', :media => "all" %>
-<h3>一覧ページ</h3>
-<%= link_to "新規投稿へ", new_tweet_path %>
-<div class="tweets-container">
+
+<div class="index-container">
+
+  <h2 class="index-title">みんなの投稿</h2>
+
+  <%= link_to "＋ 新規投稿", new_tweet_path, class: "new-post-link" %>
+
   <% if user_signed_in? %>
-    <%= link_to "マイページへ", user_path(current_user.id) %>
+    <%= link_to "マイページへ", user_path(current_user.id), class: "mypage-link" %>
   <% end %>
-  <% @tweets.each do |t| %>
-     <div class="tweet">
-     <div class="main-box">
-    
-      <% if t.image.attached? %>
-           <%= image_tag t.image, size: '250x200'%>
-      <% end %>
-      <% if user_signed_in? %>
-      <% if current_user.already_liked?(t) %>
-          <%= link_to tweet_like_path(id: t.id, tweet_id: t.id), method: :delete do %>
-             <i class="fas fa-heart"></i><%= t.likes.count %>
+
+  <div class="tweets-container">
+
+    <% @tweets.each do |t| %>
+
+      <div class="tweet">
+
+        <!-- 画像 -->
+        <div class="tweet-image">
+          <% if t.image.attached? %>
+            <%= image_tag t.image %>
+          <% else %>
+            <div class="no-image">画像なし</div>
           <% end %>
-      <% else %>
-          <%= link_to tweet_likes_path(id: t.id, tweet_id: t.id), method: :post do %>
-              <i class="far fa-heart"></i><%= t.likes.count %>
+        </div>
+
+        <!-- 投稿内容 -->
+        <div class="tweet-content">
+
+          <div class="tweet-user">
+            👤
+            <%= link_to t.user.name, user_path(t.user.id) %>
+          </div>
+
+          <h3 class="tweet-name">
+            <%= t.name %>
+          </h3>
+
+          <p class="tweet-age">
+            年齢：<%= t.age %>歳
+          </p>
+
+          <div class="tweet-about">
+            <%= t.about %>
+          </div>
+
+          <!-- いいね -->
+          <div class="tweet-like">
+            <% if user_signed_in? %>
+
+              <% if current_user.already_liked?(t) %>
+                <%= link_to tweet_like_path(id: t.id, tweet_id: t.id), method: :delete do %>
+                  <i class="fas fa-heart"></i>
+                  <%= t.likes.count %>
+                <% end %>
+
+              <% else %>
+                <%= link_to tweet_likes_path(id: t.id, tweet_id: t.id), method: :post do %>
+                  <i class="far fa-heart"></i>
+                  <%= t.likes.count %>
+                <% end %>
+              <% end %>
+
+            <% else %>
+              <i class="far fa-heart"></i>
+              <%= t.likes.count %>
+            <% end %>
+          </div>
+
+          <!-- コメント -->
+          <div class="comments-area">
+
+            <p class="comments-title">💬 コメント</p>
+
+            <% t.comments.each do |c| %>
+              <div class="comment">
+                <strong>
+                  <%= c.user.email unless c.user.blank? %>
+                </strong>
+                <p><%= c.content %></p>
+              </div>
+            <% end %>
+
+          </div>
+
+        </div>
+
+        <!-- ボタン -->
+        <div class="right-container">
+
+          <%= link_to "詳細を見る", tweet_path(t.id), class: "detail-link" %>
+
+          <% if user_signed_in? && current_user.id == t.user_id %>
+            <%= link_to "編集する", edit_tweet_path(t.id) %>
+            <%= link_to "削除する", tweet_path(t.id), method: :delete %>
           <% end %>
-      <% end %>
-  <% else %>
-      <i class="far fa-heart"></i><%= t.likes.count %>
-  <% end %>
-      <%= link_to t.user.name, user_path(t.user.id) %>
-      <%= t.name %>
-      <%= t.age %>
-      <%= t.about %>
-      <p>コメント一覧</p>
-  <% t.comments.each do |c| %>
-    <div>
-      <%= c.user.email unless c.user.blank? %>
-      <br>
-      <%= c.content %>
-    </div>
-      <br>
-  <% end %>
-    </div>
-     <div class="right-container">
-      <%= link_to "詳細へ", tweet_path(t.id) %> 
-       <% if user_signed_in? && current_user.id == t.user_id %>
-      <%= link_to "編集する", edit_tweet_path(t.id) %>
-      <%= link_to "削除する", tweet_path(t.id), method: :delete %>
+
+        </div>
+
       </div>
+
     <% end %>
- <% end %>
- 
+
+  </div>
+
 </div>

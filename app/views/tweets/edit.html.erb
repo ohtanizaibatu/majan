@@ -1,12 +1,46 @@
-<%= form_for @tweet do |f| %>
-  <%= f.label :name %>
-  <%= f.text_field :name, :size => 30 %> 
-  <%= f.label :age  %>
-  <%= f.number_field :age, :size => 10 %>
-  <%= f.label :image %>
-  <%= f.number_field :image, :size => 10 %>
-  <%= f.label :about  %>
-  <%= f.text_area :about, :size => "30x2" %>
+<%= stylesheet_link_tag "edit", "data-turbo-track": "reload" %>
 
-  <%= f.submit "編集する" %>
-<% end %>
+<div class="edit-container">
+
+  <h1 class="edit-title">✏️ 投稿を編集</h1>
+
+  <p class="edit-description">
+    投稿内容を変更できます！
+  </p>
+
+  <div class="edit-card">
+
+    <%= form_for @tweet do |f| %>
+
+      <div class="edit-field">
+        <%= f.label :name, "名前" %>
+        <%= f.text_field :name, placeholder: "名前を入力してください" %>
+      </div>
+
+      <div class="edit-field">
+        <%= f.label :age, "年齢" %>
+        <%= f.number_field :age, placeholder: "年齢を入力してください" %>
+      </div>
+
+      <div class="edit-field">
+        <%= f.label :image, "画像" %>
+        <%= f.file_field :image %>
+      </div>
+
+      <div class="edit-field">
+        <%= f.label :about, "投稿内容" %>
+        <%= f.text_area :about,
+            placeholder: "麻雀について自由に書いてみよう！" %>
+      </div>
+
+      <%= f.submit "変更を保存する", class: "edit-submit" %>
+
+    <% end %>
+
+  </div>
+
+  <%= link_to "← 投稿詳細に戻る",
+      tweet_path(@tweet.id),
+      class: "edit-back" %>
+
+</div>
