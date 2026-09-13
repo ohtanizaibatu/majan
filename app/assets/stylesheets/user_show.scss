@@ -1,0 +1,343 @@
+/* =========================
+   マイページ
+========================= */
+
+.user-show-container {
+  width: 92%;
+  max-width: 850px;
+  margin: 35px auto 60px;
+}
+
+
+/* =========================
+   プロフィール
+========================= */
+
+.profile-card {
+  padding: 30px;
+
+  background: #fffdf7;
+  border: 3px solid #397a59;
+  border-radius: 20px;
+
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.09);
+
+  text-align: center;
+}
+
+.profile-card > h1 {
+  margin: 0 0 25px;
+
+  color: #286344;
+  font-size: 30px;
+}
+
+
+/* プロフィール画像 */
+
+.profile-image {
+  width: 150px;
+  height: 150px;
+
+  object-fit: cover;
+
+  border-radius: 50%;
+  border: 4px solid #dce4dd;
+
+  margin-bottom: 15px;
+}
+
+.profile-no-image {
+  width: 150px;
+  height: 150px;
+
+  margin: 0 auto 15px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: #f0eee5;
+
+  border-radius: 50%;
+  border: 4px solid #dce4dd;
+
+  font-size: 55px;
+}
+
+
+/* ユーザー情報 */
+
+.profile-info h2 {
+  margin: 5px 0 18px;
+
+  color: #286344;
+  font-size: 25px;
+}
+
+.profile-info p {
+  max-width: 550px;
+
+  margin: 10px auto;
+  padding: 12px 15px;
+
+  background: #f5faf7;
+
+  border-radius: 10px;
+
+  color: #555;
+  line-height: 1.6;
+}
+
+.profile-info p span {
+  display: block;
+
+  margin-bottom: 4px;
+
+  color: #397a59;
+  font-size: 13px;
+  font-weight: bold;
+}
+
+
+/* 編集ボタン */
+
+.profile-edit-button {
+  display: inline-block;
+
+  margin-top: 15px;
+  padding: 11px 22px;
+
+  background: #397a59;
+  color: white;
+
+  border-radius: 10px;
+
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.profile-edit-button:hover {
+  background: #286344;
+}
+
+
+/* =========================
+   投稿セクション
+========================= */
+
+.user-posts-section {
+  margin-top: 30px;
+}
+
+.section-title {
+  margin: 0 0 15px;
+  padding: 12px 18px;
+
+  background: #397a59;
+  color: white;
+
+  border-radius: 12px;
+
+  font-size: 20px;
+}
+
+.like-title {
+  background: #c75a3a;
+}
+
+
+/* =========================
+   投稿カード
+========================= */
+
+.user-post-card {
+  display: grid;
+
+  grid-template-columns: 190px 1fr;
+
+  gap: 22px;
+
+  margin-bottom: 18px;
+  padding: 20px;
+
+  background: #fffdf7;
+
+  border: 2px solid #dce4dd;
+  border-radius: 17px;
+
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.06);
+}
+
+
+/* 投稿画像 */
+
+.user-post-image {
+  width: 190px;
+  height: 145px;
+
+  object-fit: cover;
+
+  border-radius: 12px;
+}
+
+.user-post-no-image {
+  width: 190px;
+  height: 145px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: #f0eee5;
+
+  border-radius: 12px;
+
+  color: #999;
+}
+
+
+/* 投稿内容 */
+
+.user-post-content {
+  min-width: 0;
+}
+
+.user-post-content h3 {
+  margin: 0 0 5px;
+
+  color: #286344;
+  font-size: 22px;
+}
+
+.post-user {
+  margin: 0 0 5px;
+
+  color: #777;
+  font-size: 14px;
+}
+
+.post-age {
+  margin: 0 0 10px;
+
+  color: #777;
+  font-size: 14px;
+}
+
+.post-about {
+  margin: 0 0 15px;
+  padding: 10px 12px;
+
+  background: #f5faf7;
+
+  border-radius: 9px;
+
+  color: #555;
+  line-height: 1.6;
+}
+
+
+/* 詳細ボタン */
+
+.post-detail-button {
+  display: inline-block;
+
+  padding: 8px 18px;
+
+  background: #397a59;
+  color: white;
+
+  border-radius: 9px;
+
+  text-decoration: none;
+
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.post-detail-button:hover {
+  background: #286344;
+}
+
+
+/* 投稿がない場合 */
+
+.empty-message {
+  padding: 25px;
+
+  background: #fffdf7;
+
+  border-radius: 12px;
+
+  text-align: center;
+
+  color: #999;
+}
+
+
+/* =========================
+   戻るボタン
+========================= */
+
+.back-button {
+  display: block;
+
+  width: fit-content;
+
+  margin: 30px auto 0;
+  padding: 10px 20px;
+
+  background: #f0eee5;
+  color: #555;
+
+  border-radius: 10px;
+
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.back-button:hover {
+  background: #e4e1d5;
+}
+
+
+/* =========================
+   スマホ
+========================= */
+
+@media (max-width: 700px) {
+
+  .user-show-container {
+    width: 94%;
+    margin-top: 25px;
+  }
+
+  .profile-card {
+    padding: 22px 17px;
+  }
+
+  .profile-card > h1 {
+    font-size: 25px;
+  }
+
+  .user-post-card {
+    display: flex;
+    flex-direction: column;
+
+    padding: 17px;
+  }
+
+  .user-post-image,
+  .user-post-no-image {
+    width: 100%;
+    height: 200px;
+  }
+
+  .section-title {
+    font-size: 18px;
+  }
+
+  .user-post-content h3 {
+    font-size: 20px;
+  }
+}

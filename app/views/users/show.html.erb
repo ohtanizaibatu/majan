@@ -1,33 +1,166 @@
-<h1>users#show</h1>
-<p>名前 : <%= @user.name %></p>
-<p>メールアドレス : <%= @user.email %></p>
-<p>プロフィール : <%= @user.profile %></p>
+<%= stylesheet_link_tag "user_show", "data-turbo-track": "reload" %>
 
-<% if current_user.id == @user.id %>
-  <%= link_to "編集する", edit_user_registration_path %>
-<% end %>
+<div class="user-show-container">
 
-<% if @user.image.attached? %>
-     <%= image_tag  @user.image, size: '250x200'%>
-<% end %>
+  <!-- ユーザープロフィール -->
+  <div class="profile-card">
 
-<h2>ユーザーの投稿一覧</h2>
-<% @user.tweets.each do |t| %>
-  <%= t.user.name %>
-  <%= t.name %>
-  <%= t.age %>
-  <%= t.image %>
-  <%= t.about %>
-<% end %>
+    <h1>👤 マイページ</h1>
 
-<h2>ユーザーがいいねした投稿一覧</h2>
-<% @user.liked_tweets.each do |t| %>
-  <%= t.user.name %>
-  <%= t.name %>
-  <%= t.age %>
-  <%= t.image %>
-  <%= t.about %>
-<% end %>
-<!-- ここまで-->
+    <% if @user.image.attached? %>
+      <%= image_tag @user.image, class: "profile-image" %>
+    <% else %>
+      <div class="profile-no-image">
+        👤
+      </div>
+    <% end %>
 
-<%= link_to "Tweet一覧に戻る", tweets_path %>
+    <div class="profile-info">
+
+      <h2><%= @user.name %></h2>
+
+      <p>
+        <span>📧 メールアドレス</span>
+        <%= @user.email %>
+      </p>
+
+      <p>
+        <span>📝 プロフィール</span>
+        <%= @user.profile.presence || "まだプロフィールがありません" %>
+      </p>
+
+    </div>
+
+    <% if current_user.id == @user.id %>
+      <%= link_to "✏️ プロフィールを編集する",
+          edit_user_registration_path,
+          class: "profile-edit-button" %>
+    <% end %>
+
+  </div>
+
+
+  <!-- ユーザーの投稿 -->
+  <div class="user-posts-section">
+
+    <h2 class="section-title">📝 自分の投稿</h2>
+
+    <% if @user.tweets.any? %>
+
+      <div class="user-post-list">
+
+        <% @user.tweets.each do |t| %>
+
+          <div class="user-post-card">
+
+            <% if t.image.attached? %>
+              <%= image_tag t.image, class: "user-post-image" %>
+            <% else %>
+              <div class="user-post-no-image">
+                画像なし
+              </div>
+            <% end %>
+
+            <div class="user-post-content">
+
+              <h3><%= t.name %></h3>
+
+              <p class="post-age">
+                年齢：<%= t.age %>歳
+              </p>
+
+              <p class="post-about">
+                <%= t.about %>
+              </p>
+
+              <%= link_to "詳細を見る",
+                  tweet_path(t.id),
+                  class: "post-detail-button" %>
+
+            </div>
+
+          </div>
+
+        <% end %>
+
+      </div>
+
+    <% else %>
+
+      <p class="empty-message">
+        まだ投稿がありません。
+      </p>
+
+    <% end %>
+
+  </div>
+
+
+  <!-- いいねした投稿 -->
+  <div class="user-posts-section">
+
+    <h2 class="section-title like-title">
+      ❤️ いいねした投稿
+    </h2>
+
+    <% if @user.liked_tweets.any? %>
+
+      <div class="user-post-list">
+
+        <% @user.liked_tweets.each do |t| %>
+
+          <div class="user-post-card">
+
+            <% if t.image.attached? %>
+              <%= image_tag t.image, class: "user-post-image" %>
+            <% else %>
+              <div class="user-post-no-image">
+                画像なし
+              </div>
+            <% end %>
+
+            <div class="user-post-content">
+
+              <p class="post-user">
+                👤 <%= t.user.name %>
+              </p>
+
+              <h3><%= t.name %></h3>
+
+              <p class="post-age">
+                年齢：<%= t.age %>歳
+              </p>
+
+              <p class="post-about">
+                <%= t.about %>
+              </p>
+
+              <%= link_to "詳細を見る",
+                  tweet_path(t.id),
+                  class: "post-detail-button" %>
+
+            </div>
+
+          </div>
+
+        <% end %>
+
+      </div>
+
+    <% else %>
+
+      <p class="empty-message">
+        まだいいねした投稿がありません。
+      </p>
+
+    <% end %>
+
+  </div>
+
+
+  <!-- 戻る -->
+  <%= link_to "← みんなの投稿に戻る",
+      tweets_path,
+      class: "back-button" %>
+
+</div>
