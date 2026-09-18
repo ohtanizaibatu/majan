@@ -411,10 +411,10 @@ header h1 span:nth-child(10) {
 ========================= */
 
 .cat {
-  width: 260px;
+  width: 240px;
 
-  left: 5%;
-  bottom: 3%;
+  left: 4%;
+  bottom: 9%;
 
   animation:
     cat-jump 2.2s ease-in-out infinite;
@@ -446,10 +446,10 @@ header h1 span:nth-child(10) {
 ========================= */
 
 .penguin {
-  width: 220px;
+  width: 200px;
 
   left: 40%;
-  bottom: 5%;
+  bottom: 8%;
 
   animation:
     penguin-sway 3s ease-in-out infinite;
@@ -477,10 +477,10 @@ header h1 span:nth-child(10) {
 ========================= */
 
 .dog {
-  width: 260px;
+  width: 240px;
 
-  right: 5%;
-  bottom: 3%;
+  right: 4%;
+  bottom: 9%;
 
   animation:
     dog-float 3.5s ease-in-out infinite;
@@ -720,22 +720,21 @@ header h1 span:nth-child(10) {
 
 .speech-bubble {
   position: absolute;
-  right: 100px;
-  bottom: 130px;
+  right: -20px !important;
+  bottom: 150px !important;
 
-  width: 330px;
-  padding: 22px 28px;
+  width: 280px;
+  padding: 18px 22px;
 
   background: rgba(255, 250, 235, 0.95);
-  border: 3px solid #3f3a32;
-  border-radius: 30px;
+  border: 3px solid #333;
+  border-radius: 25px;
 
   text-align: left;
-  line-height: 1.7;
+  line-height: 1.45;
 
-  box-shadow: 3px 4px 0 rgba(63, 58, 50, 0.25);
-
-  z-index: 20;
+  box-shadow: 3px 3px 0 #333;
+  z-index: 60;
 }
 
 .speech-bubble p {
@@ -867,4 +866,29 @@ header h1 span:nth-child(10) {
 
 .menu-card.posts {
   background: rgba(115, 100, 160, 0.92);
+}
+
+/* =========================
+   TOPページ 最終位置調整
+========================= */
+
+/* 猫 */
+.mahjong-home .cat {
+  bottom: 15% !important;
+}
+
+/* ペンギン */
+.mahjong-home .penguin {
+  bottom: 15% !important;
+}
+
+/* 犬 */
+.mahjong-home .dog-area {
+  bottom: 15% !important;
+}
+
+/* 紹介カード */
+.menu-cards {
+  bottom: 2% !important;
+  z-index: 40 !important;
 }
